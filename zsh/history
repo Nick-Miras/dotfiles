@@ -1,0 +1,10 @@
+nvim .zshrc
+ls
+cd Downloads
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+emerge -av git
+sudo emerge -av dev-vcs/git
+emerge -av starship
+emerge -av starship
+sudo emerge -av starship
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
