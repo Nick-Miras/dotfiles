@@ -218,7 +218,7 @@ default_border pixel 3
 default_floating_border pixel 3
 
 # Firefox
-bindsym $mod+b exec firefox-bin
+bindsym $mod+b exec firefox
 # Rofi
 bindsym $mod+d exec --no-startup-id rofi -show drun
 # Keepassxc
