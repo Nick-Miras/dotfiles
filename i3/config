@@ -218,13 +218,13 @@ default_border pixel 3
 default_floating_border pixel 3
 
 # Firefox
-bindsym $mod+b exec firefox
+#bindsym $mod+b exec firefox
 # Rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun
+#bindsym $mod+d exec --no-startup-id rofi -show drun
 # Keepassxc
-bindsym $mod+k exec keepassxc
+#bindsym $mod+k exec keepassxc
 # Krusader
-bindsym $mod+e exec krusader
+#bindsym $mod+e exec krusader
 
 # target                 title     bg    text   indicator border
 client.focused           $pink     $base $text  $pink     $pink
