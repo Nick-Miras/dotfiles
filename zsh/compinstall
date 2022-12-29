@@ -1,10 +1,12 @@
 
 
 
+
+
 # The following lines were added by compinstall
 
 zstyle ':completion:*' auto-description 'argument: %d'
-zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
 zstyle ':completion:*' expand prefix suffix
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' ignore-parents parent pwd .. directory
