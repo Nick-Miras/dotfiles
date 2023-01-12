@@ -40,6 +40,8 @@ beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
 editor = os.getenv("EDITOR") or "nano"
+-- editor = "tmux"
+terminal_cmd = terminal .. " -e " .. "$HOME/.local/bin/tmux/init"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -234,7 +236,7 @@ awful.keyboard.append_global_keybindings({
                   }
               end,
               {description = "lua execute prompt", group = "awesome"}),
-    awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
+    awful.key({ modkey,           }, "Return", function () awful.spawn.with_shell(terminal_cmd) end,
               {description = "open a terminal", group = "launcher"}),
     --[[
     awful.key({ modkey },            "r",     function () awful.screen.focused().mypromptbox:run() end,
@@ -255,9 +257,19 @@ awful.keyboard.append_global_keybindings({
 	{description = "lock the screen", group = "program"}),
 
     awful.key({ modkey }, "r", function () 
-        awful.spawn.with_shell("$HOME/.config/rofi/bin/runner")
+        awful.spawn("rofi -show run")
         end ,
 	{description = "opens the runner", group = "program"}),
+
+    awful.key({ modkey, "Shift" }, "Print", 
+        function () awful.spawn.with_shell("flameshot gui") 
+	end ,
+        {description = "open flameshot gui", group = "program"}),
+
+    awful.key({ "Mod1" }, "Tab", function ()
+        awful.spawn("rofi -show window")
+        end, 
+        {description = "opens window selector", group = "program"}),
 })
 
 -- Tags related keybindings
